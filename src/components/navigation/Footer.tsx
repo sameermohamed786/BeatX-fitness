@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Share2, Globe, Radio, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { MagneticButton } from '../ui/MagneticButton';
@@ -32,13 +33,14 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand & Mission */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#FF3B30] to-[#FF7A00] flex items-center justify-center text-white font-black text-xl shadow-lg shadow-[#FF3B30]/30">
-                B
-              </div>
-              <span className="text-2xl font-black tracking-tighter text-white uppercase">
-                BEAT<span className="text-[#FF3B30]">X</span> STUDIO
-              </span>
+            <div className="relative h-14 w-48 mb-2">
+              <Image
+                src="/images/logo.png"
+                alt="BeatX Fitness Studio Logo"
+                fill
+                sizes="192px"
+                className="object-contain object-left"
+              />
             </div>
             <p className="text-sm text-white/60 leading-relaxed max-w-sm">
               Transforming bodies and lives through rhythm-driven high-intensity athletic training, immersive lightscapes, and elite master coaching.

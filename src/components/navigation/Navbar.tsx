@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Zap, Dumbbell, Sparkles, Trophy, Calendar, Users, LayoutGrid, BookOpen, Mail } from 'lucide-react';
 import { MagneticButton } from '../ui/MagneticButton';
@@ -54,22 +55,21 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, onBookC
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Brand Logo */}
+        {/* Official Brand Logo */}
         <button
           onClick={() => handleNavClick('home')}
-          className="flex items-center gap-2 group text-left focus:outline-none"
+          className="relative h-10 sm:h-12 w-32 sm:w-44 group text-left focus:outline-none transition-transform duration-200 hover:scale-105"
+          aria-label="BeatX Fitness Studio Home"
         >
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#FF3B30] to-[#FF7A00] flex items-center justify-center text-white font-black text-xl shadow-lg shadow-[#FF3B30]/30 group-hover:scale-105 transition-transform duration-200">
-            B
-          </div>
-          <div>
-            <span className="text-xl font-black tracking-tighter text-white uppercase flex items-center gap-1">
-              BEAT<span className="text-[#FF3B30]">X</span>
-            </span>
-            <span className="block text-[9px] font-bold text-white/50 tracking-widest uppercase -mt-1">
-              FITNESS STUDIO
-            </span>
-          </div>
+          <Image
+            src="/images/logo.png"
+            alt="BeatX Fitness Studio Logo"
+            fill
+            sizes="(max-width: 768px) 128px, 176px"
+            priority
+            loading="eager"
+            className="object-contain object-left"
+          />
         </button>
 
         {/* Desktop Navigation Links */}
