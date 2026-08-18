@@ -33,14 +33,19 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand & Mission */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="relative h-14 w-48 mb-2">
-              <Image
-                src="/images/logo.png"
-                alt="BeatX Fitness Studio Logo"
-                fill
-                sizes="192px"
-                className="object-contain object-left"
-              />
+            <div className="flex items-center gap-3">
+              <div className="relative w-12 h-12">
+                <Image
+                  src="/images/bx-emblem.png"
+                  alt="BeatX Emblem"
+                  fill
+                  sizes="48px"
+                  className="object-contain"
+                />
+              </div>
+              <span className="text-2xl font-black tracking-tighter text-white uppercase">
+                BEAT<span className="text-[#FF3B30]">X</span> STUDIO
+              </span>
             </div>
             <p className="text-sm text-white/60 leading-relaxed max-w-sm">
               Transforming bodies and lives through rhythm-driven high-intensity athletic training, immersive lightscapes, and elite master coaching.
